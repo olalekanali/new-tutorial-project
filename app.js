@@ -1,7 +1,10 @@
-const http = require('http');
 const express = require('express');
+const {aboutRouter} = require('./routes/about')
 
-const server = http.createServer((req, res)=>{
+const app = express();
+
+
+app.get('/', (req, res)=>{
     if(req.url === '/'){
         res.end(`Hello Developers`);
         console.log('Hello world');
@@ -11,5 +14,13 @@ const server = http.createServer((req, res)=>{
     }
 });
 
-server.listen('3000');
+aboutRouter.get('/about', (req, res)={
+    
+})
+
+
+
+app.listen('3000', ()=>{
+    console.log(`Server is running on port 3000....`);
+});
 
